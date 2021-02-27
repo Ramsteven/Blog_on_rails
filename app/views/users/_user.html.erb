@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center flex-wrap m-4">
+
+      <%@users.each do |user|%>
+      <div class= "d-flex align-items-center m-4 ">
+       <%= image_tag "https://avatars.dicebear.com/4.5/api/male/#{user.username}.svg?mood[]=happy&mood[]=happy", :size => "200x200" %>
+      <div>
+        <ul>
+          <li>Username: <%= user.username %></li>
+          <li>Email:   <%= user.email %></li>
+          <li>Numbers of articles:<%= user.username %></li>
+       </ul>
+       <div class="d-flex justify-content-center flex-column">
+         <%= link_to "View Profile", user_path(user),class: "btn btn-info btn-sm" %>
+
+        <% if logged_in? && (user == current_user || current_user.admin?) %>
+          <%= link_to "edit User", edit_user_path(user), class: "btn btn-primary btn-sm " %>
+          <%= link_to "delete User", user_path(user), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure?"} %>
+        <% end %>
+      </div>
+       
+      </div>
+      </div>
+    <% end %>
+  </div>

@@ -1,0 +1,16 @@
+<div class="container m-4">
+<%= render "shared/errors", obj: @article  %>
+<%= form_with model: @article do |f| %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :content %><br>
+  <%= f.text_area :content %><br>
+
+  <%= f.submit("Submit", class: "btn btn-success mt-4")%> <br>
+<% end %>
+    <%= link_to "Return list Articles" , articles_path, class: "btn btn-primary btn-sm mt-4"  %>
+  </div>
+
+</div>
+

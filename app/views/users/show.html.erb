@@ -1,0 +1,45 @@
+<h1 class="text-center m-4"> Welcome <%= @user.username %> </h1>
+<div class="d-flex justify-content-around align-items-center">
+  <%= image_tag "https://avatars.dicebear.com/4.5/api/male/#{@user.username}.svg?mood[]=happy&mood[]=happy", :size => "200x200" %>
+<div>
+  <ul>
+    <li>Username: <%= @user.username %></li>
+    <li>Email:   <%= @user.email %></li>
+      <li>Numbers of articles:<%= @user.username %></li>
+    </ul>
+</div>
+
+  <div>  <h1>Articles</h1>
+    <div class="flickr_pagination">
+        <%= will_paginate @articles, :container => true %>
+    </div>
+      <% @articles.each do |x| %>
+      <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-around align-items-center">
+      <span><h4><%= x.title %></h4></span>
+      <div>
+      <%= link_to "show", article_path(x), class: "btn btn-secondary btn-sm" %>
+    
+
+        <% if logged_in? && (@user == current_user || current_user.admin?) %>
+        <%= link_to "edit", edit_article_path(x), class: "btn btn-primary btn-sm " %>
+
+        <%= link_to "delete", article_path(x), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure?"} %>
+      <% end %>
+      </div>
+    </li>
+        </ul>
+      <%end%>
+      
+</div>
+    
+</div>
+<div class="d-flex justify-content-center m-5">
+
+  <% if logged_in? && (@user == current_user || current_user.admin?) %>
+    <%= link_to "edit User", edit_user_path(@user), class: "btn btn-primary " %>
+    <%= link_to "delete User", user_path(@user), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?"} %>
+  <% end %>
+</div>
+
+    <%= link_to "Return list Articles" , articles_path, class: "btn btn-primary btn-sm m-4"  %>

@@ -1,0 +1,9 @@
+<div class="container ">
+  <h1 class="text-center m-4">Bloggers</h1>
+  <hr>
+
+  <div class="flickr_pagination d-flex justify-content-center">
+       <%= will_paginate @users%>
+  </div>
+    <%=render "user"%>
+</div>

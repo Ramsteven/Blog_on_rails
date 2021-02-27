@@ -1,0 +1,19 @@
+<div class="container m-5">
+  <h1>login with your account</h1>
+  <div class="container">  
+    <%=form_with scope: :session, url: login_path do |f|%>
+      <%= f.label :email%><br>
+
+      <%= f.text_field :email, placeholder: "Enter your email"%><br>
+
+      <%= f.label :password%><br>
+
+      <%= f.text_field :password, placeholder: "Enter your password"%><br>
+
+      <%= f.submit "login", class:"btn btn-info mt-4"%>
+
+    <%end %>
+    <%= link_to "Return list Articles" , articles_path, class: "btn btn-primary btn-sm mt-4"  %>
+  </div>
+</div>
+
