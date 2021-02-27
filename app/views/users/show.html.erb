@@ -1,6 +1,6 @@
 <h1 class="text-center m-4"> Welcome <%= @user.username %> </h1>
 <div class="d-flex justify-content-around align-items-center">
-  <%= image_tag "https://avatars.dicebear.com/4.5/api/male/#{@user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
+  <%= image_tag "https://avatars.dicebear.com/4.5/api/#{@user.gender}/#{@user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
 <div>
   <ul>
     <li>Username: <%= @user.username %></li>

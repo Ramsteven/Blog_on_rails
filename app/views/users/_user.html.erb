@@ -3,7 +3,7 @@
   <%@users.each do |user|%>
     <div>
       <div class= "d-flex align-items-center m-4 ">
-       <%= image_tag "https://avatars.dicebear.com/4.5/api/male/#{user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
+        <%= image_tag "https://avatars.dicebear.com/4.5/api/#{user.gender}/#{user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
         <div>
           <ul>
             <li>Username: <%= user.username %></li>
