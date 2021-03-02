@@ -14,9 +14,14 @@
       <%= f.label :password%><br>
 
       <%= f.text_field :password%><br>
-
+      
       <%= f.label :gender%><br>
       <%= f.select :gender, [["Male", "male"], ["Female", "female"]], class: "mt-2" %> <br>
+
+
+      <%= f.label :avatar%><br>
+      <%= f.file_field :avatar, style:"width: 200px; display: block" %>
+
 
       <%= f.submit(@user.new_record? ? "Sign Up" : "Update Account"  ,class: "mt-4 btn btn-success")%>
 

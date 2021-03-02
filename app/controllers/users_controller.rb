@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def set_params
-    params.require(:user).permit(:username,:email,:password,:gender)
+    params.require(:user).permit(:username,:email,:password,:gender, :avatar)
   end
   
   def require_same_user
@@ -67,4 +67,5 @@ class UsersController < ApplicationController
       redirect_to @user
     end
   end
+
 end

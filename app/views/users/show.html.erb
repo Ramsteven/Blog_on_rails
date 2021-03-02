@@ -1,6 +1,16 @@
 <h1 class="text-center m-4"> Welcome <%= @user.username %> </h1>
 <div class="d-flex justify-content-around align-items-center">
-  <%= image_tag "https://avatars.dicebear.com/4.5/api/#{@user.gender}/#{@user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
+ 
+  <% unless @user.avatar.attached? %>
+    <%= image_tag "https://avatars.dicebear.com/4.5/api/#{@user.gender}/#{@user.username}.svg?mood[]=happy&mood[]=happy", :size => "100x100" %>
+  <% else %>
+    <%=link_to url_for(@user.avatar), target: :_blank do%>
+       <%= image_tag @user.avatar.variant(
+        resize_to_limit: [400, 400]
+      )%>
+    <% end %>
+  <% end %>
+
 <div>
   <ul>
     <li>Username: <%= @user.username %></li>
