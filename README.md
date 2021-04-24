@@ -14,7 +14,7 @@ This is a blog web application that use a login and registration system, for cre
 - **API https://avatars.dicebear.com/docs for generate avatars dinamically.**
 - **Styles: https://bootswatch.com/**
 
-## Demo 🎥
+# Demo 🎥
 
 ![AlphaBlog Demo](https://i.imgur.com/LmWK38m.gif)
 
