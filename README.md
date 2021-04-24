@@ -16,7 +16,7 @@ This is a blog web application that use a login and registration system, for cre
 
 # Demo 🎥
 
-![AlphaBlog Demo](https://i.imgur.com/LmWK38m.gif)
+![AlphaBlog Demo](https://imgur.com/Rj6pGN9.gif)
 
 # Tools 🛠
 
